@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>jQuery下的返回顶部功能的实现 </title>
+    <link rel="stylesheet" href="css/demo.css" type="text/css" />
+    <style>
+        .backToTop{display:none; width:18px; line-height:1.2; padding:5px 0; background-color:#000; color:#fff; font-size:12px;
+            text-align:center; position:fixed; _position:absolute; right:10px; bottom:100px; _bottom:"auto"; cursor:pointer; opacity:.6; filter:Alpha(opacity=60);}
+    </style>
+</head>
+
+<body>
+
+<div id="main">
+        <div id="content" class="show">
+            <div class="demo">
+                <img src="http://img01.e23.cn/2014/1105/20141105120444421.png" alt=""/>
+                <img src="http://img01.e23.cn/2014/1105/20141105120444421.png" alt=""/>
+                <img src="http://img01.e23.cn/2014/1105/20141105120444421.png" alt=""/>
+                <img src="http://img01.e23.cn/2014/1105/20141105120444421.png" alt=""/>
+                <img src="http://img01.e23.cn/2014/1105/20141105120444421.png" alt=""/>
+                <img src="http://img01.e23.cn/2014/1105/20141105120444421.png" alt=""/>
+                <img src="http://img01.e23.cn/2014/1105/20141105120444421.png" alt=""/>
+                <img src="http://img01.e23.cn/2014/1105/20141105120444421.png" alt=""/>
+                <img src="http://img01.e23.cn/2014/1105/20141105120444421.png" alt=""/>
+                <img src="http://img01.e23.cn/2014/1105/20141105120444421.png" alt=""/>
+                <img src="http://img01.e23.cn/2014/1105/20141105120444421.png" alt=""/>
+                <img src="http://img01.e23.cn/2014/1105/20141105120444421.png" alt=""/>
+            </div>
+        </div>
+
+</div>
+
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+ <script>
+    (function() {
+        var $backToTopTxt = "返回顶部", $backToTopEle = $('<div class="backToTop"></div>').appendTo($("body"))
+            .text($backToTopTxt).attr("title", $backToTopTxt).click(function() {
+                $("html, body").animate({ scrollTop: 0 }, 120);
+            }), $backToTopFun = function() {
+            var st = $(document).scrollTop(), winh = $(window).height();
+            (st > 0)? $backToTopEle.show(): $backToTopEle.hide();
+            //IE6下的定位
+            if (!window.XMLHttpRequest) {
+                $backToTopEle.css("top", st + winh - 166);
+            }
+        };
+        $(window).bind("scroll", $backToTopFun);
+        $(function() { $backToTopFun(); });
+    })();
+</script>
+</body>
+</html>

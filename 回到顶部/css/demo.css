@@ -1,0 +1,11 @@
+body{background:#a0b3d6; font-size:87.5%; margin:0; line-height:1.5; color:#333; font-family:'Microsoft YaHei', sans-serif;}
+a{color:#34538b; text-decoration:none;}a:hover{text-decoration:underline;}
+a img { border: 0; }
+#main{width:100%; background:#beceeb; overflow:hidden;}
+.demo{padding:10px; *zoom:1;}
+.demo:after{display:table; content:""; clear:both;}
+.demo .remind {
+    color: gray;
+    font-size: 12px;
+}
+#content{min-height:500px; _height:500px; background:white; border:solid #cad5eb; border-width:0 2px;}
